@@ -1,10 +1,12 @@
-<h1>Log in</h1>
+<div class="main">
+  <h1>Log in</h1>
 
-<%= simple_form_for :session, url: session_path do |f| %>
+  <%= simple_form_for :session, url: session_path do |f| %>
 
-  <%= f.input :username %>
-  <%= f.input :password %>
+    <%= f.input :username %>
+    <%= f.input :password %>
 
-  <%= f.button :submit, "Log in" %>
+    <%= f.button :submit, "Log in", class: "button" %>
 
-<% end %>
+    <% end %>
+</div>

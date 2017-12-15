@@ -1,0 +1,106 @@
+$black: #222222;
+$white: #ffffff;
+$grey: #f7f7f7;
+$blue: #32b4e7;
+
+
+$titleFont: "Open sans";
+$bodyFont: "Roboto";
+
+* {
+  box-sizing: border-box;
+}
+
+$font-size-h1-px:62px;
+$font-size-h2-px:48px;
+$font-size-h3-px:36px;
+$font-size-score-px:24px;
+$font-size-body-px: 18px;
+$font-size-links-px: 14px;
+
+
+$font-weight-bold: 800;
+$font-weight-regular: 400;
+$font-weight-light: 200;
+
+
+body {
+  color: $black;
+  font-family: $bodyFont;
+  font-size: $font-size-body-px;
+  margin: 0;
+  background-color: $grey;
+  overflow: hidden;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: $titleFont;
+  padding: 0;
+  margin:0;
+}
+
+p {
+  margin:0;
+  padding:0;
+}
+
+header, .main, footer {
+  padding: 0 30px 0 30px;
+}
+
+header {
+  position: relative;
+  background-color: $black;
+  width: 100%;
+  overflow: hidden;
+  padding: 10px 0 10px 30px;
+
+  .logo {
+      float: left;
+      color: $white;
+      text-decoration: none;
+    }
+
+  nav {
+    float: right;
+  }
+}
+
+.home {
+  text-align: center;
+  background-image:url(../assets/aaina-sharma-378569.jpg);
+  background-repeat: no-repeat;
+  background-size:  cover;
+  height:100vh;
+  margin-bottom: 90px;
+  padding-top: 150px;
+  padding-bottom: 400px;
+}
+
+.search {
+  max-width: 1000px;
+  margin: 0 auto 0 auto;
+  font-size: $font-size-h1-px;
+  color: $white;
+}
+
+.button {
+  background: $blue;
+  border-radius: 18px;
+  color: $white;
+  display: inline-block;
+  font-family: $titleFont, sans-serif;
+  font-size: 12px;
+  line-height: 18px;
+  padding: 9px 24px;
+  text-decoration: none;
+  vertical-align: middle;
+  margin: 10px;
+}
+
+input {
+  min-width: 200px;
+  font-size: $font-size-links-px;
+  margin: 5px 10px;
+  padding:5px;
+}
