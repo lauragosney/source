@@ -30,7 +30,6 @@ body {
   font-size: $font-size-body-px;
   margin: 0;
   background-color: $grey;
-  overflow: hidden;
 }
 
 h1, h2, h3, h4, h5 {
@@ -39,12 +38,26 @@ h1, h2, h3, h4, h5 {
   margin:0;
 }
 
+h3 {
+  font-size: $font-size-score-px;
+  text-decoration: none;
+  color: $black;
+}
+
+h2 {
+  font-size: $font-size-h2-px;
+}
+
 p {
   margin:0;
   padding:0;
 }
 
-header, .main, footer {
+a {
+  text-decoration: none;
+}
+
+header, .main, footer, section {
   padding: 0 30px 0 30px;
 }
 
@@ -63,6 +76,7 @@ header {
 
   nav {
     float: right;
+    line-height: 3;
   }
 }
 
@@ -70,9 +84,8 @@ header {
   text-align: center;
   background-image:url(../assets/aaina-sharma-378569.jpg);
   background-repeat: no-repeat;
-  background-size:  cover;
+  background-size: cover;
   height:100vh;
-  margin-bottom: 90px;
   padding-top: 150px;
   padding-bottom: 400px;
 }
@@ -81,6 +94,7 @@ header {
   max-width: 1000px;
   margin: 0 auto 0 auto;
   font-size: $font-size-h1-px;
+  text-decoration: none;
   color: $white;
 }
 
@@ -98,9 +112,49 @@ header {
   margin: 10px;
 }
 
+.button-outline {
+  border: 2px solid $white;
+  border-radius: 18px;
+  color: $white;
+  display: inline-block;
+  font-family: $titleFont, sans-serif;
+  font-size: 12px;
+  line-height: 18px;
+  padding: 9px 24px;
+  text-decoration: none;
+  vertical-align: middle;
+  margin: 10px 30px 10px 10px;
+}
+
+.nav-links {
+  color: $white;
+  text-decoration: none;
+  padding-right:20px;
+}
+
 input {
   min-width: 200px;
   font-size: $font-size-links-px;
   margin: 5px 10px;
   padding:5px;
+}
+
+
+.container {
+  margin-top: 20px;
+}
+
+.photos {
+  display:flex;
+  flex-wrap: wrap;
+}
+
+
+.photo {
+  max-width: 300px;
+  margin:20px 20px 20px 0;
+
+  img {
+    max-width: 300px;
+  }
 }
