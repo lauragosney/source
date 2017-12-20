@@ -2,9 +2,8 @@
 <div class="photo">
 
   <%= link_to item_path(item) do %>
-    <%= image_tag item.image.medium %>
     <h3><%= item.title %></h3>
-
+    <%= image_tag item.image.medium %>
   <% end %>
 
 </div>
