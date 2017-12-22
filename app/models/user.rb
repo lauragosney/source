@@ -24,6 +24,9 @@ class User < ApplicationRecord
         # save the customer id to the database
         self.stripe_customer = customer.id
 
+        # save subscription id to the database
+        self.stripe_subscription = subscription.id
+
         # save everything
 
         self.save
@@ -39,4 +42,58 @@ class User < ApplicationRecord
     false
 
   end
+
+  def update_with_stripe(form_params)
+    # update the model with form_params
+    # check if it's valid
+    # if it's valid update stripe
+    # then update the database
+
+    self.assign_attributes(form_params)
+
+    if self.valid?
+      # get the subscription from stripe
+      subscription = Stripe::Subscription.retrieve(self.stripe_subscription)
+
+      # get the first item from the stripe subscription
+      item_id = subscription.items.data[0].id
+
+      # make our new items list
+
+      items = [
+        {id: item_id, plan: self.subscription_plan}
+      ]
+
+      # update our subscription with the new items
+
+      subscription.items = items
+
+      # save the subscription to stripe
+
+      subscription.save
+
+      #save our data to the database
+      self.save
+    else
+      false
+    end
+  end
+
+
+  def destroy_and_unsubscribe
+    # get the subscription from stripe
+    subscription = Stripe::Subscription.retrieve(self.stripe_subscription)
+
+    # delete that subscription
+
+    subscription.delete
+
+    # remove the user completely
+
+    self.destroy
+
+  end
+
+
+
 end
