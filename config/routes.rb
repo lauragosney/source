@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   resources :categories
 
+
+
   # items controller
   resources :items
 
@@ -14,6 +16,9 @@ Rails.application.routes.draw do
 
   # users can only make 1 session (you are either logged in or out)
   resource :session
+
+  # users can ony edit 1 account
+  resource :account
 
   get "about", to: "pages#about"
 
